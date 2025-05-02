@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Client</title>
+</head>
+<body>
+    <h1>WebSocket Client</h1>
+    <button onclick="kirimPesan()">Kirim Pesan</button>
+    <div id="pesanDiterima"></div>
+
+    <script>
+        // Buat koneksi WebSocket
+        const socket = new WebSocket('ws://localhost:8080');
+
+        // Event listener saat koneksi WebSocket terbuka
+        socket.addEventListener('open', (event) => {
+            console.log('Koneksi WebSocket dibuka');
+        });
+
+        // Event listener untuk menerima pesan dari server
+        socket.addEventListener('message', (event) => {
+            document.getElementById('pesanDiterima').textContent = 'Pesan dari server: ' + event.data;
+        });
+
+        // Fungsi untuk mengirim pesan ke server
+        function kirimPesan() {
+            const pesan = 'Halo Romi!';
+            console.log('Mengirim pesan:', pesan);
+            socket.send(pesan);
+        }
+
+        // Event listener untuk menangani error
+        socket.addEventListener('error', (event) => {
+            console.error('Error WebSocket:', event);
+        });
+
+        // Event listener saat koneksi ditutup
+        socket.addEventListener('close', (event) => {
+            console.log('Koneksi WebSocket ditutup');
+        });
+    </script>
+</body>
+</html>
