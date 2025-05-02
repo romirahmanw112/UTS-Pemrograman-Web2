@@ -106,9 +106,18 @@ Server menggunakan library ws untuk mendengarkan koneksi WebSocket pada port 808
 Setiap pesan yang diterima oleh server akan dikirimkan kembali ke klien sebagai respons.
 ## OUTPUT 
 
-![gambar](ss_hasil_uts_pemrograman_web2/ss1_pemrograman_web2.png)
+![gambar](ss_hasil_uts_pemrograman_web2/ss2.png)
 
+![gambar](ss_hasil_uts_pemrograman_web2/ss3.png)
+Setelah menjalankan kode di atas, hasil yang terlihat pada aplikasi web adalah sebagai berikut:
 
+1. Pesan dari Server:
+Pada gambar pertama, pesan yang diterima dari server adalah “Selamat datang di server WebSocket!”.
+Pada gambar kedua, pesan yang diterima adalah “Server menerima pesan: Halo Romi!”, yang menunjukkan bahwa server berhasil menerima dan mengirimkan kembali pesan yang dikirim oleh klien.
+2. Langkah-langkah yang Dijalankan:
+Klien mengirimkan pesan dengan menekan tombol “Kirim Pesan”.
+Server kemudian menerima pesan tersebut dan mengirimkan pesan balasan.
+Pesan yang diterima dari server kemudian ditampilkan di halaman web klien.
 ## Keunggulan WebSocket
 Efisiensi Bandwidth: Mengurangi overhead karena tidak perlu mengirimkan header HTTP pada setiap pertukaran data setelah koneksi dibuat.
 
@@ -144,5 +153,4 @@ RFC 6455: The WebSocket Protocol
 WebSocket API MDN
 
 WebSocket.org
-
 
